@@ -13,16 +13,6 @@
                 echo $this->Html->link(__('Deletar'), array('action' => 'delet', $category['Category']['id']), array('class' => 'btn btn-outline-danger btn-sm', 'data-target' => '#apagarRegistro'));
                 ?>
             </span>
-            <div class="dropdown d-block d-md-none">
-                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Ações
-                </button>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">                                    
-                    <a class="dropdown-item" href="listar.html">Listar</a>
-                    <a class="dropdown-item" href="editar.html">Editar</a>
-                    <a class="dropdown-item" href="apagar.html" data-toggle="modal" data-target="#apagarRegistro">Apagar</a>
-                </div>
-            </div>
         </div>
     </div><hr>
     <dl class="row">
@@ -37,11 +27,11 @@
             &nbsp;</dd>
 
         <dt class="col-sm-3">Data do Cadastro</dt>
-         <dd class="col-sm-9">
+        <dd class="col-sm-9">
             <?php echo h($category['Category']['created']); ?>
             &nbsp;
         </dd>
-        
+
         <dt class="col-sm-3">Ultima Modificação</dt>
         <dd class="col-sm-9">
             <?php echo h($category['Category']['modified']); ?>
@@ -74,20 +64,20 @@
                     <td><?php echo $post['created']; ?></td>
                     <td><?php echo $post['modified']; ?></td>
                     <td class="text-center">
-                        <span class="d-none d-md-block">
+                        <span class="d-none d-md-block">                                
                             <?php
-                            echo $this->Html->link(__('Visualizar'), array('controller' => 'posts', 'action' => 'view', $post['id']), array('class' => 'btn btn-outline-primary btn-sm'));
-                            echo '&nbsp;';
-                            echo $this->Html->link(__('Editar'), array('controller' => 'posts', 'action' => 'edit', $post['id']), array('class' => 'btn btn-outline-warning btn-sm'));
-                            echo '&nbsp;';
-                            echo $this->Html->link(__('Deletar'), array('controller' => 'posts', 'action' => 'delet', $post['id']), array('class' => 'btn btn-outline-danger btn-sm', 'data-target' => '#apagarRegistro'));
+                            echo $this->Html->link(__('Visualizar'), array('controller' => 'posts', 'action' => 'view', $post['id']), array('class' => 'btn btn-outline-primary btn-sm', 'style' => 'width: 100px'));
+                            echo '<br/>';
+                            echo $this->Html->link(__('Editar'), array('controller' => 'posts', 'action' => 'edit', $post['id']), array('class' => 'btn btn-outline-warning btn-sm', 'style' => 'width: 100px'));
+                            echo '<br/>';
+                            echo $this->Html->link(__('Deletar'), array('controller' => 'posts', 'action' => 'delet', $post['id']), array('class' => 'btn btn-outline-danger btn-sm', 'style' => 'width: 100px', 'data-target' => '#apagarRegistro'));
                             ?>
                         </span>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </table>
-      <nav aria-label="paginacao">
+        <nav aria-label="paginacao">
             <ul class="pagination pagination-sm justify-content-center">
                 <?php
                 echo $this->Paginator->first('Primeira', array('class' => 'page-item page-link'));

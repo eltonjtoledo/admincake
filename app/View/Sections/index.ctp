@@ -1,8 +1,16 @@
 <div class="sections index list-group-item">
-    <h2><?php echo __('Sections'); ?></h2>
+        <div class="d-flex">
+    <div class="mr-auto p-2">
+        <h2><?php echo __('Lista de Seções'); ?></h2>
+    </div>
+    <div class="p-2">
+        <?= $this->Html->link('Cadastrar', array('action' => 'add'), array('class' => 'btn btn-outline-success btn-sm', 'div' => 'p-2')) ?>
+    </div>
+    </div>
+            
     <table class="table table-striped table-hover table-bordered">
         <thead>
-            <tr>
+            <tr> 
                 <th><?php echo $this->Paginator->sort('id'); ?></th>
                 <th><?php echo $this->Paginator->sort('Titulo'); ?></th>
                 <th><?php echo $this->Paginator->sort('Criação'); ?></th>
@@ -20,11 +28,11 @@
                     <td class="text-center">
                         <span class="d-none d-md-block">
                             <?php
-                            echo $this->Html->link(__('Visualizar'), array('action' => 'view', $section['Section']['id']), array('class' => 'btn btn-outline-primary btn-sm'));
-                            echo '&nbsp;';
-                            echo $this->Html->link(__('Editar'), array('action' => 'edit', $section['Section']['id']), array('class' => 'btn btn-outline-warning btn-sm'));
-                            echo '&nbsp;';
-                            echo $this->Html->link(__('Deletar'), array('action' => 'delet', $section['Section']['id']), array('class' => 'btn btn-outline-danger btn-sm', 'data-target' => '#apagarRegistro'));
+                            echo $this->Html->link(__('Visualizar'), array('action' => 'view', $section['Section']['id']), array('class' => 'btn btn-outline-primary btn-sm', 'style' => 'width: 100px'));
+                            echo '<br/>';
+                            echo $this->Html->link(__('Editar'), array('action' => 'edit', $section['Section']['id']), array('class' => 'btn btn-outline-warning btn-sm', 'style' => 'width: 100px'));
+                            echo '<br/>';
+                            echo $this->Html->link(__('Deletar'), array('action' => 'delet', $section['Section']['id']), array('class' => 'btn btn-outline-danger btn-sm', 'style' => 'width: 100px', 'data-target' => '#apagarRegistro'));
                             ?>
                         </span>
                     </td>

@@ -36,11 +36,13 @@
                         <td><?php echo ($category['Category']['modified'] != '' ? date('d/m/Y', strtotime($category['Category']['modified'])) : 'Não modificado'); ?>&nbsp;</td>
 
                         <td class="text-center">
-                            <span class="d-none d-md-block">
+                            <span class="d-none d-md-block">                                
                                 <?php
-                                echo $this->Html->link(__('Visualizar'), array('action' => 'view', $category['Category']['id']), array('class' => 'btn btn-outline-primary btn-sm'));
-                                echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']), array('class' => 'btn btn-outline-warning btn-sm'));
-                                echo $this->Html->link(__('Deletar'), array('action' => 'delet', $category['Category']['id']), array('class' => 'btn btn-outline-danger btn-sm', 'data-target' => '#apagarRegistro'));
+                                echo $this->Html->link(__('Visualizar'), array('action' => 'view', $category['Category']['id']), array('class' => 'btn btn-outline-primary btn-sm', 'style' => 'width: 100px'));
+                                echo '<br/>';
+                                echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id']), array('class' => 'btn btn-outline-warning btn-sm', 'style' => 'width: 100px'));
+                                echo '<br/>';
+                                echo $this->Html->link(__('Deletar'), array('action' => 'delet', $category['Category']['id']), array('class' => 'btn btn-outline-danger btn-sm', 'style' => 'width: 100px', 'data-target' => '#apagarRegistro'));
                                 ?>
                             </span>
                         </td>
